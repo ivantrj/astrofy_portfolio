@@ -1,56 +1,81 @@
 ---
-title: "Demo Post 1"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 10 2022"
+title: "Understanding SwiftUI Layout"
+description: "SwiftUI is a powerful framework for building user interfaces in a declarative way. One of its key features is its flexible and intuitive layout system. In this article, we'll dive into the basics of SwiftUI layout to help you create beautiful and responsive user interfaces."
+pubDate: "10 Oct 2023"
 heroImage: "/post_img.webp"
-tags: ["tokio"]
+tags: ["dev", "swiftui"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer
-malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas
-pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse
-platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada
-fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea
-dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst
-quisque sagittis purus sit amet.
+## What is SwiftUI Layout?
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum
-quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet.
-Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus.
-Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit
-ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt
-dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus
-arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed
-tempus urna et pharetra pharetra massa massa ultricies mi.
+Layout in SwiftUI is all about arranging and positioning views within your app's user interface. Unlike the old way of using Auto Layout constraints in UIKit, SwiftUI uses a more straightforward approach based on stacks and spacers.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam
-sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec.
-Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna
-fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et
-egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel
-turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra
-nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim
-praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus
-egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam
-ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor
-purus non. Amet dictum sit amet justo donec enim.
+### Stacks
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut
-consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra.
-Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor
-dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor
-dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque
-eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices
-tincidunt arcu. Id cursus metus aliquam eleifend mi.
+In SwiftUI, you can use stacks to organize your views horizontally or vertically. There are two main types of stacks:
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus
-imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu
-cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt
-dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat
-sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida.
-Egestas integer eget aliquet nibh praesent tristique magna.
+- **HStack**: This creates a horizontal stack, placing views from left to right.
+- **VStack**: This creates a vertical stack, arranging views from top to bottom.
+
+Here's an example of how to use an HStack and a VStack:
+
+```swift
+    HStack {
+        Text("Hello")
+        Text("World")
+    }
+
+    VStack {
+        Text("SwiftUI")
+        Text("Layout")
+    }
+```
+
+### Spacers
+
+Spacers are special views in SwiftUI that help distribute space within a stack. They can push views apart or pull them closer together. You can use `Spacer()` to create a flexible space that fills available space in the stack.
+
+```swift
+    VStack {
+        Text("Top")
+        Spacer()
+        Text("Bottom")
+    }
+```
+
+### Alignment
+
+You can control the alignment of views within a stack using the `alignment` property. For example:
+
+```swift
+    HStack(alignment: .top) {
+        Text("Top")
+        Text("Middle")
+        Text("Bottom")
+    }
+```
+
+## Combining Stacks
+
+To create more complex layouts, you can combine stacks. Nesting stacks inside each other allows you to create intricate designs easily.
+
+```swift
+    VStack {
+        HStack {
+            Text("Left")
+            Spacer()
+            Text("Right")
+        }
+        Text("Center")
+    }
+```
+
+## Responsive Layouts
+
+One of the advantages of SwiftUI is its automatic handling of different screen sizes and orientations. SwiftUI adjusts the layout to fit the available space, making it easier to create apps that work well on various devices.
+
+## Conclusion
+
+SwiftUI's layout system simplifies the way we design user interfaces. By using stacks, spacers, and alignment, you can easily create responsive and visually appealing layouts. Experiment with these basic layout techniques, and you'll be well on your way to mastering SwiftUI's layout capabilities.
+
+Start small, practice, and gradually explore more advanced layout options as you become more comfortable with SwiftUI. Happy coding!
