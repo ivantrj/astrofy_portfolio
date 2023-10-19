@@ -2,7 +2,7 @@
 title: "Understanding SwiftUI Layout"
 description: "SwiftUI is a powerful framework for building user interfaces in a declarative way. One of its key features is its flexible and intuitive layout system. In this article, we'll dive into the basics of SwiftUI layout to help you create beautiful and responsive user interfaces."
 pubDate: "10 Oct 2023"
-heroImage: "/post_img.webp"
+heroImage: "/blog_post_img.webp"
 tags: ["dev", "swiftui"]
 ---
 
